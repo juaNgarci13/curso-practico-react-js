@@ -1,7 +1,10 @@
 import React from "react";
+import { useRouteError } from "react-router-dom";
 import "../../styles/Login.scss";
 
 const Login = () => {
+  const error = useRouteError();
+  console.error(error);
   return (
     <div className='login'>
       <div className='form-container'>
@@ -32,6 +35,7 @@ const Login = () => {
             defaultValue='Confirm'
             className='primary-button login-button'
           />
+          <a href='/recovery-password'>Password</a>
         </form>
       </div>
     </div>
