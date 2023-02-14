@@ -1,10 +1,14 @@
-import React from 'react';
-import '../styles/global.scss'
+import React from "react";
+import "../styles/global.scss";
+import Layaout from "./containers/Layaout";
+import Login from "./containers/Login";
 
 const App = () => {
-    return (
-        <h1>Hola Mundo desde el Infierno!!</h1>
-    );
-}
+  return (
+    <>
+      <Layaout children={<Login />} />
+    </>
+  );
+};
 
 export default App;
