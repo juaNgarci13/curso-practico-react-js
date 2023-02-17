@@ -2,18 +2,23 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 //COMPONENTES
-import Home from "../containers/Home";
-import Login from "../containers/Login";
-import RecoveryPassword from "../containers/RecoveryPassword";
+import Login from "../pages/Login";
+import Header from "../components/Header";
+import Notfound from "../pages/NotFound";
+import Checkout from "../pages/Checkout";
+import SendEmail from "../pages/SendEmail";
+import MyAccount from "../pages/MyAccount";
 import ErrorPage from "../containers/ErrorPage";
+import CreatePassword from "../pages/CreatePassword";
+import RecoveryPassword from "../pages/RecoveryPassword";
+
 //ESTILOS
 import "../styles/global.scss";
-import Header from "../components/Header";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Header />,
     errorElement: <ErrorPage />,
   },
   {
@@ -27,6 +32,36 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
+    path: "send-email",
+    element: <SendEmail />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "new-password",
+    element: <CreatePassword />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "account",
+    element: <MyAccount />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "sing-up",
+    element: <SingUp />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "checkout",
+    element: <Checkout />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "orders",
+    element: <Orders />,
+    errorElement: <ErrorPage />,
+  },
+  {
     path: "error",
     element: <ErrorPage />,
   },
@@ -35,9 +70,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <React.StrictMode>
-      <Header>
-        <RouterProvider router={router} />
-      </Header>
+      <RouterProvider router={router} />
     </React.StrictMode>
   );
 };
