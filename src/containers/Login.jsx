@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouteError } from "react-router-dom";
-import "../../styles/Login.scss";
+import "../styles/Login.scss";
 
 const Login = () => {
   const error = useRouteError();

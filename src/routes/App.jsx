@@ -2,12 +2,13 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 //COMPONENTES
-import Home from "../components/containers/Home";
-import Login from "../components/containers/Login";
-import RecoveryPassword from "../components/containers/RecoveryPassword";
-import ErrorPage from "../components/containers/ErrorPage";
+import Home from "../containers/Home";
+import Login from "../containers/Login";
+import RecoveryPassword from "../containers/RecoveryPassword";
+import ErrorPage from "../containers/ErrorPage";
 //ESTILOS
 import "../styles/global.scss";
+import Header from "../components/Header";
 
 const router = createBrowserRouter([
   {
@@ -25,12 +26,18 @@ const router = createBrowserRouter([
     element: <RecoveryPassword />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: "error",
+    element: <ErrorPage />,
+  },
 ]);
 
 const App = () => {
   return (
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <Header>
+        <RouterProvider router={router} />
+      </Header>
     </React.StrictMode>
   );
 };

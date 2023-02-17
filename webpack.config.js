@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    publicPath: "/",
   },
   mode: "development",
   resolve: {
@@ -30,7 +31,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(css|scss)$/i,
+        test: /\.(css|scss)$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
@@ -44,4 +45,7 @@ module.exports = {
       filename: "[name].css",
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };
