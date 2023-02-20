@@ -4,53 +4,54 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 //COMPONENTES
 import Login from "../pages/Login";
 import Header from "../components/Header";
+import Orders from "../pages/Orders";
 import Notfound from "../pages/NotFound";
 import Checkout from "../pages/Checkout";
+import ErrorPage from "../pages/ErrorPage";
 import SendEmail from "../pages/SendEmail";
 import MyAccount from "../pages/MyAccount";
-import ErrorPage from "../containers/ErrorPage";
-import CreatePassword from "../pages/CreatePassword";
-import RecoveryPassword from "../pages/RecoveryPassword";
+import NewPassword from "../pages/NewPassword";
+import PasswordRecovery from "../pages/PasswordRecovery";
 
 //ESTILOS
-import "../styles/global.scss";
+import "../styles/global.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Header />,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
   },
   {
     path: "login",
     element: <Login />,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
   },
   {
-    path: "recovery-password",
-    element: <RecoveryPassword />,
-    errorElement: <ErrorPage />,
+    path: "password-recovery",
+    element: <PasswordRecovery />,
+    // errorElement: <ErrorPage />,
   },
   {
     path: "send-email",
     element: <SendEmail />,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
   },
   {
     path: "new-password",
-    element: <CreatePassword />,
-    errorElement: <ErrorPage />,
+    element: <NewPassword />,
+    // errorElement: <ErrorPage />,
   },
   {
     path: "account",
     element: <MyAccount />,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
   },
-  {
-    path: "sing-up",
-    element: <SingUp />,
-    errorElement: <ErrorPage />,
-  },
+  // {
+  //   path: "sing-up",
+  //   element: <SingUp />,
+  //   // errorElement: <ErrorPage />,
+  // },
   {
     path: "checkout",
     element: <Checkout />,
@@ -62,8 +63,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "error",
-    element: <ErrorPage />,
+    path: "*",
+    element: <Notfound />,
   },
 ]);
 
