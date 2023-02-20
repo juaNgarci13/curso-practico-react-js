@@ -2,5 +2,6 @@
   "presets": [
     "@babel/preset-env", // compilar de javascript moderno
     "@babel/preset-react" // trabajar con toda la sintaxis de react que estas en la libreria
-  ]
+  ],
+  "plugins": ["@babel/plugin-transform-runtime"]
 }
