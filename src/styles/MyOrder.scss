@@ -1,11 +1,16 @@
 @import 'vars';
 
 .MyOrder {
-	width: 360px;
-	padding: 24px;
-	box-sizing: border-box;
-	position: absolute;
 	right: 0;
+	top: 61px;
+	width: 360px;
+	bottom: 0px;
+	padding: 24px;
+	position: absolute;
+	box-sizing: border-box;
+	border-radius: 6px;
+	border-left: 1px solid var(--hospital-green);
+	background-color: white;
 }
 .title-container {
 	display: flex;

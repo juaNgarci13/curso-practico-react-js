@@ -10,7 +10,9 @@ import Notfound from "../pages/NotFound";
 import Checkout from "../pages/Checkout";
 import SendEmail from "../pages/SendEmail";
 import MyAccount from "../pages/MyAccount";
+import AppContext from "../context/AppContext";
 import NewPassword from "../pages/NewPassword";
+import useInitialState from "../hooks/useInitialState";
 import PasswordRecovery from "../pages/PasswordRecovery";
 
 //ESTILOS
@@ -56,10 +58,14 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
+  const initialState = useInitialState();
+
   return (
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
+    <AppContext.Provider value={initialState}>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
+    </AppContext.Provider>
   );
 };
 
